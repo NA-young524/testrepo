@@ -20,12 +20,13 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.13.9'
+          python-version: '3.11'
 
       - name: Install dependencies
+        working-directory: ./AI_Employment_Support
         run: |
           python -m pip install --upgrade pip
-          pip install selenium webdriver-manager sqlalchemy asyncpg python-dotenv beautifulsoup4 aiohttp
+          pip install -r requirements.txt
 
       - name: Run Python Script
         env:
@@ -36,6 +37,5 @@ jobs:
         #   DB_PW: ${{ secrets.DB_PW }} 
         #   DB_ID: ${{ secrets.DB_ID }}
 
-        run: |
-          cd AI_Employment_Support
-          python auto_crawl.py
+        working-directory: ./AI_Employment_Support
+        run: python auto_crawl.py
