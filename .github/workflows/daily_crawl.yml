@@ -25,7 +25,6 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install "contourpy>=1.2.0"
           pip install -r AI_Employment_Support/requirements.txt
 
       - name: Run Python Script
