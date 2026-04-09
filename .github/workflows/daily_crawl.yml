@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         #with:
           # 만약 특정 브랜치(예: dev)에서 실행하고 싶다면 아래 주석 해제
           #ref: 'dev'
